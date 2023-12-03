@@ -44,13 +44,13 @@ jobs:
     #   id: install
     
 
-    # - name: Pull Image from Docker Hub    
-    #   run: |
-    #     docker login -u ${{env.DOCKER_USER}} -p ${{env.DOCKER_PASSWORD}}
-    #     docker pull ${{env.DOCKER_USER}}/${{env.DOCKER_REPOSITORY}}:${{env.NODE_IMAGE_TAG}}
+    - name: Pull Image from Docker Hub    
+      run: |
+        docker login -u ${{env.DOCKER_USER}} -p ${{env.DOCKER_PASSWORD}}
+        docker pull ${{env.DOCKER_USER}}/${{env.DOCKER_REPOSITORY}}:${{env.NODE_IMAGE_TAG}}
 
-    - name: Authenticate with Docker Registry
-      run: echo ${{ secrets.REGISTRY_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin ${{  secrets.DOCKER_REGISTRY }}
+    # - name: Authenticate with Docker Registry
+    #   run: echo ${{ secrets.REGISTRY_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin ${{  secrets.DOCKER_REGISTRY }}
       
     # - name:  update kubeconfig
     #   run : |
