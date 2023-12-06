@@ -81,4 +81,3 @@ jobs:
         kubectl apply -f minio.yml
         kubectl apply -f mongo.yml
         
-
