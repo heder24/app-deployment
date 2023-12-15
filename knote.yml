@@ -9,8 +9,7 @@ spec:
     - port: 80
       targetPort: 3000
   type: LoadBalancer #NodePort
-  nodeSelector:
-    kubernetes.io/role/elb: "1"
+  
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -25,9 +24,6 @@ spec:
     metadata:
       labels:
         app: knote
-  nodeSelector:
-  kubernetes.io/role/elb: ""
-    
     spec:
       containers:
         - name: knote
