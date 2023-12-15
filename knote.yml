@@ -25,7 +25,7 @@ spec:
     metadata:
       labels:
         app: knote
-        # kubernetes.io/role/elb: 1 
+        kubernetes.io/role/elb: ""
     spec:
       containers:
         - name: knote
